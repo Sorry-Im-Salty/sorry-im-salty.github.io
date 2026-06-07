@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salty — Gameplay & Systems Developer</title>
+  <meta name="description" content="Portfolio of Salty — FiveM / Lua gameplay and systems developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#top" class="nav__brand"><span class="nav__dot"></span>Salty</a>
+    <nav class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero__eyebrow" data-handle></p>
+      <h1 class="hero__title" data-name></h1>
+      <p class="hero__role" data-role></p>
+      <p class="hero__blurb" data-blurb></p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#work">View work</a>
+        <a class="btn btn--ghost" data-github target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <ul class="stats" data-stats></ul>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <div class="section__head">
+        <span class="section__kicker">// selected work</span>
+        <h2 class="section__title">Things I've shipped</h2>
+        <p class="section__sub">Each entry is drawn from real commit history on a live FiveM roleplay server. Commit messages shown are verbatim.</p>
+      </div>
+      <div class="grid" data-projects></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section__head">
+        <span class="section__kicker">// toolkit</span>
+        <h2 class="section__title">Skills</h2>
+      </div>
+      <div class="skills" data-skills></div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <div class="section__head">
+        <span class="section__kicker">// history</span>
+        <h2 class="section__title">Timeline</h2>
+      </div>
+      <ol class="timeline" data-timeline></ol>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--contact">
+      <div class="section__head">
+        <span class="section__kicker">// say hi</span>
+        <h2 class="section__title">Get in touch</h2>
+        <p class="section__sub">Open to gameplay/systems work. Find my code here:</p>
+      </div>
+      <div class="contact">
+        <a class="contact__card" data-github target="_blank" rel="noopener">
+          <span class="contact__label">Code</span>
+          <span class="contact__value">github.com/fdg-rp</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span data-footer></span>
+    <span class="footer__meta">Built from git history · no frameworks</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
