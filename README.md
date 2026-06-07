@@ -1,37 +1,24 @@
-# Salty — Portfolio
+# portfolio
 
-A static, dependency-free portfolio site. Content is generated from real git
-history on a live FiveM roleplay server (`[scripting]` monorepo).
+My personal site. Static HTML/CSS/JS, no build step, no dependencies.
 
-## Files
+## Running it
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Page structure |
-| `styles.css` | All styling (dark, game-dev theme) |
-| `data.js` | **Edit this** — profile, stats, projects, skills, timeline |
-| `main.js` | Renders the page from `data.js` |
+Just open `index.html` in a browser. Or if you want it served over http:
 
-## Run locally
-
-It's plain HTML/CSS/JS — just open `index.html` in a browser, or serve it:
-
-```bash
+```
 npx serve .
-# then open the printed http://localhost:xxxx
 ```
 
-## Edit the content
+## Structure
 
-Everything is in `data.js`. To add a project, copy an existing object in the
-`PROJECTS` array. The `commits` array shows verbatim commit subjects under each
-card — keep them real so the work stays credible.
+- `index.html` - markup
+- `styles.css` - styling
+- `data.js` - all the content (profile, projects, skills). This is the file to edit.
+- `main.js` - renders the page from data.js
+
+To add a project, copy one of the objects in the `PROJECTS` array in `data.js`.
 
 ## Deploy
 
-Any static host works. Easiest options:
-
-- **GitHub Pages** — push these files to a repo, enable Pages on the branch root.
-- **Netlify / Vercel** — drag-and-drop the folder, or connect the repo. No build
-  command needed; the publish directory is this folder.
-- **Cloudflare Pages** — same, no build step.
+Hosted on GitHub Pages off the `main` branch. Any static host works fine though.

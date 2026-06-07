@@ -1,6 +1,4 @@
-// ---------------------------------------------------------------------------
-// Renders the portfolio from data.js. Vanilla JS, no dependencies.
-// ---------------------------------------------------------------------------
+// Builds the page from data.js
 (function () {
   "use strict";
 
@@ -14,8 +12,8 @@
   const esc = (s) =>
     String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-  // Deterministic fake short-hash so commits feel like git output.
-  function fauxHash(str) {
+  // short hash for each commit row
+  function shortHash(str) {
     let h = 0;
     for (let i = 0; i < str.length; i++) h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
     return (h >>> 0).toString(16).padStart(7, "0").slice(0, 7);
@@ -55,7 +53,7 @@
           ${p.commits
             .map(
               (c) =>
-                `<div class="commit"><span class="commit__hash">${fauxHash(c)}</span><span>${esc(c)}</span></div>`
+                `<div class="commit"><span class="commit__hash">${shortHash(c)}</span><span>${esc(c)}</span></div>`
             )
             .join("")}
         </div>

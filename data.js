@@ -1,8 +1,4 @@
-// ---------------------------------------------------------------------------
-// Portfolio content. Everything below is derived from real git history in the
-// FiveM server-core "[scripting]" monorepo (author: thomasmaltezos00@gmail.com).
-// Edit these objects to update the site — no build step required.
-// ---------------------------------------------------------------------------
+// Site content. Edit these objects to update the page.
 
 const PROFILE = {
   name: "Salty",
