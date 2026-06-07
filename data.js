@@ -30,21 +30,6 @@ const SKILLS = [
     group: "Frameworks & UI",
     items: ["FiveM / CitizenFX", "Vue 3", "NUI (eventbridge)", "MySQL / oxmysql"],
   },
-  {
-    group: "Domains",
-    items: [
-      "Multiplayer game modes",
-      "Networked state & sync",
-      "Combat / weapons systems",
-      "Vehicle & inventory systems",
-      "Police / EMS / forensics tooling",
-      "Anti-exploit & security hardening",
-      "Performance & refactoring",
-      "Data structures & algorithms",
-      "Client/server architecture",
-      "Live-ops & hotfixing",
-    ],
-  },
 ];
 
 // Work on fdg-rp/scripting. `commits` are real, verbatim commit subjects.
