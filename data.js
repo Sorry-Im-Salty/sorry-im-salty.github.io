@@ -5,28 +5,28 @@ const PROFILE = {
   eyebrow: "FiveM / Lua systems developer",
   role: "Gameplay & Systems Developer — FiveM / Lua",
   blurb:
-    "I build multiplayer game systems for a large FiveM roleplay server: competitive game modes, " +
-    "combat and progression systems, police/EMS/forensics tooling, and the Vue-powered in-game UIs " +
-    "that drive them. Two years, 700+ commits, and a lot of shipping to a live player base.",
+    "I build multiplayer game systems — competitive game modes, combat and progression systems, and " +
+    "the in-game UIs that drive them. Mostly Lua and Vue on a large FiveM roleplay server, with a " +
+    "background in C#/Unity game programming. Below is my work, grouped by the repos I've shipped to.",
   github: "https://github.com/fdg-rp/scripting",
   location: "Australia",
 };
 
 const STATS = [
-  { value: "715", label: "Commits authored" },
-  { value: "68k+", label: "Lines added" },
-  { value: "30+", label: "Resources touched" },
-  { value: "2 yrs", label: "Shipping to a live server" },
+  { value: "5", label: "Repositories" },
+  { value: "770+", label: "Commits authored" },
+  { value: "6+", label: "Languages" },
+  { value: "2019", label: "Coding since" },
 ];
 
 const SKILLS = [
   {
     group: "Languages",
-    items: ["Lua", "JavaScript", "SQL", "HTML / CSS"],
+    items: ["Lua", "JavaScript", "C#", "C / C++", "SQL", "HTML / CSS"],
   },
   {
     group: "Frameworks & UI",
-    items: ["FiveM / CitizenFX", "Vue 3", "NUI (eventbridge)", "MySQL / oxmysql"],
+    items: ["FiveM / CitizenFX", "Vue 3", "NUI (eventbridge)", "Unity", "MySQL / oxmysql"],
   },
   {
     group: "Domains",
@@ -38,14 +38,16 @@ const SKILLS = [
       "Police / EMS / forensics tooling",
       "Anti-exploit & security hardening",
       "Performance & refactoring",
+      "Game development (Unity)",
+      "Data structures & algorithms",
       "Client/server architecture",
       "Live-ops & hotfixing",
     ],
   },
 ];
 
-// Featured work. `commits` are real, verbatim commit subjects from the repo.
-const PROJECTS = [
+// Work on fdg-rp/scripting. `commits` are real, verbatim commit subjects.
+const FDG_PROJECTS = [
   {
     title: "Search & Destroy",
     scope: "nexus",
@@ -447,6 +449,174 @@ const PROJECTS = [
   },
 ];
 
+// Work grouped by repository. Each repo lists what I did and the projects within it.
+const REPOS = [
+  {
+    name: "fdg-rp / scripting",
+    role: "Lead Gameplay & Systems Developer",
+    period: "2024 – 2026",
+    meta: "715 commits · 68k+ lines",
+    languages: ["Lua", "Vue 3", "JavaScript", "SQL"],
+    url: "https://github.com/fdg-rp/scripting",
+    summary:
+      "The resource monorepo for a large FiveM roleplay server. I own gameplay and systems work " +
+      "across game modes, combat, vehicles, inventory and the emergency-services suite, plus the " +
+      "Vue NUIs that drive them. This is the bulk of my work — the projects below are highlights.",
+    projects: FDG_PROJECTS,
+  },
+  {
+    name: "Sorry-Im-Salty / resources",
+    role: "Solo Developer",
+    period: "2024",
+    meta: "30 commits",
+    languages: ["JavaScript", "Lua", "NUI"],
+    url: "https://github.com/Sorry-Im-Salty/resources",
+    summary:
+      "A collection of standalone FiveM scripts and admin/debug tooling I built independently.",
+    projects: [
+      {
+        title: "HandOfGod & Fling Tools",
+        scope: "admin tools",
+        tag: "Admin Tooling",
+        year: "2024",
+        summary:
+          "Admin/fun commands with a custom HUD, including a 'Hand of God' control and a fling " +
+          "command — worked around engine quirks to sync with punch animations and stop crashes.",
+        highlights: [
+          "Custom HUD tied to command state",
+          "Animation-synced HandOfGod control",
+          "Crash-hardened fling command",
+        ],
+        stack: ["JavaScript", "Lua", "NUI"],
+        commits: [
+          "Added Fling and HandOfGod commands",
+          "Workaround (best possible I've found) to sync with punch animations",
+          "Removed fling command and fixed up HandOfGod to stop crashes",
+        ],
+      },
+      {
+        title: "Ped Spawner Debug HUD",
+        scope: "debug",
+        tag: "Developer Tooling",
+        year: "2024",
+        summary:
+          "A debug HUD that displays currently spawned peds, with correct show/hide lifecycle " +
+          "handling so it never lingers when debug mode is off.",
+        highlights: [
+          "Live count of spawned peds",
+          "Fixed HUD persisting after debug disabled",
+          "Fade handling when still enabled",
+        ],
+        stack: ["JavaScript", "Lua", "NUI"],
+        commits: [
+          "Implemented a HUD that displays current spawned peds",
+          "Fixed the error where the HUD was persisting once debug was disabled (I hate case sensitivity)",
+          "Fixed an issue where HUD would fade out when still enabled",
+        ],
+      },
+      {
+        title: "Ignition System",
+        scope: "vehicles",
+        tag: "Vehicle Feature",
+        year: "2024",
+        summary: "A reworked vehicle ignition command with performance passes and cleanup.",
+        highlights: ["Ignition command rework", "Performance improvements & cleanup"],
+        stack: ["Lua"],
+        commits: ["Ignition command rework", "Performance improvements / Clean up"],
+      },
+    ],
+  },
+  {
+    name: "Sorry-Im-Salty / Goose-Hunt",
+    role: "Game Programmer (team project)",
+    period: "2019",
+    meta: "24 commits",
+    languages: ["C#", "Unity", "HLSL"],
+    url: "https://github.com/Sorry-Im-Salty/Goose-Hunt",
+    summary:
+      "A Unity game built in C# with a small team ('Electronic Ants'). My contributions covered " +
+      "gameplay scripting, scoring, lighting and platform testing.",
+    projects: [
+      {
+        title: "Goose Hunt",
+        scope: "Unity game",
+        tag: "Game Development",
+        year: "2019",
+        summary:
+          "Gameplay and systems work on a Unity title: a scoring system, play function, lighting, " +
+          "an Android platform check, and a documented play-test evaluation.",
+        highlights: [
+          "Score system & play loop",
+          "Lighting setup",
+          "Android platform check",
+          "Play-test evaluation",
+        ],
+        stack: ["C#", "Unity", "HLSL"],
+        commits: [
+          "Added Score Script.",
+          "Updated Play Function.",
+          "Added an Android check.",
+          "Added Play Test Evaluation.",
+        ],
+      },
+    ],
+  },
+  {
+    name: "Sorry-Im-Salty / AIE-2019",
+    role: "Student — Academy of Interactive Entertainment",
+    period: "2019",
+    meta: "Coursework",
+    languages: ["C", "C++"],
+    url: "https://github.com/Sorry-Im-Salty/AIE-2019",
+    summary:
+      "Coursework from my game-programming studies — the fundamentals behind everything since.",
+    projects: [
+      {
+        title: "Data Structures & Algorithms",
+        scope: "fundamentals",
+        tag: "Education",
+        year: "2019",
+        summary:
+          "Implementations of core CS fundamentals in C/C++: search and sort algorithms, entity " +
+          "arrays and iteration, and write-ups on decision-making techniques.",
+        highlights: [
+          "Linear & bubble sort implementations",
+          "Entity arrays and iteration",
+          "Decision-making technique write-up",
+        ],
+        stack: ["C", "C++"],
+        commits: [
+          "Added LinearSearch and BubbleSort.",
+          "Added example entity.",
+          "Added Decision Making Technique Section.",
+        ],
+      },
+    ],
+  },
+  {
+    name: "fdg-rp / web-landing",
+    role: "Contributor",
+    period: "2024",
+    meta: "Web",
+    languages: ["Vue", "TypeScript"],
+    url: "https://github.com/fdg-rp/web-landing",
+    summary:
+      "The server's public Vue landing/appeals site. I contributed content and copy fixes.",
+    projects: [
+      {
+        title: "Landing & Appeals Content",
+        scope: "web",
+        tag: "Web",
+        year: "2024",
+        summary: "Content and copy updates to the public-facing Vue landing site.",
+        highlights: ["Appeals page content", "Copy / grammar fixes"],
+        stack: ["Vue", "TypeScript"],
+        commits: ["Update appeals.md", "Fixed up grammatical errors."],
+      },
+    ],
+  },
+];
+
 // A condensed timeline pulled from the commit history.
 const TIMELINE = [
   {
@@ -461,7 +631,12 @@ const TIMELINE = [
   },
   {
     period: "2024",
+    title: "FiveM roleplay & personal tooling",
+    text: "Joined the FDG server and shipped across the stack (Spraypaint V2, dispatch, court, effects), and built standalone FiveM scripts in my own resources repo.",
+  },
+  {
+    period: "2019",
     title: "Foundations",
-    text: "Joined the project and shipped across the stack — Spraypaint V2, dispatch/distress, court system, effects and emergency-services tooling.",
+    text: "Studied game programming at the Academy of Interactive Entertainment — C/C++ fundamentals and data structures — and built the Unity game Goose Hunt with a small team.",
   },
 ];

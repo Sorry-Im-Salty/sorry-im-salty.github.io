@@ -33,9 +33,8 @@
     statsEl.appendChild(el("li", "reveal", `<b>${esc(s.value)}</b><span>${esc(s.label)}</span>`));
   });
 
-  // --- Projects ---
-  const grid = $("[data-projects]");
-  PROJECTS.forEach((p) => {
+  // --- Projects, grouped by repo ---
+  function projectCard(p) {
     const card = el("article", "card reveal");
     card.innerHTML = `
       <div class="card__top">
@@ -58,7 +57,27 @@
             .join("")}
         </div>
       </div>`;
-    grid.appendChild(card);
+    return card;
+  }
+
+  const reposEl = $("[data-repos]");
+  REPOS.forEach((repo) => {
+    const section = el("section", "repo reveal");
+    const header = el("div", "repo__head");
+    header.innerHTML = `
+      <div class="repo__title-row">
+        <a class="repo__name mono" href="${esc(repo.url)}" target="_blank" rel="noopener">${esc(repo.name)} ↗</a>
+        <span class="repo__period">${esc(repo.period)}</span>
+      </div>
+      <div class="repo__role">${esc(repo.role)} · <span class="repo__meta">${esc(repo.meta)}</span></div>
+      <p class="repo__summary">${esc(repo.summary)}</p>
+      <div class="repo__langs">${repo.languages.map((l) => `<span class="chip chip--lang">${esc(l)}</span>`).join("")}</div>`;
+    section.appendChild(header);
+
+    const grid = el("div", "grid");
+    repo.projects.forEach((p) => grid.appendChild(projectCard(p)));
+    section.appendChild(grid);
+    reposEl.appendChild(section);
   });
 
   // --- Skills ---
