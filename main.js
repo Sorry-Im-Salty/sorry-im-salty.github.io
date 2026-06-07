@@ -25,6 +25,8 @@
   $("[data-role]").textContent = PROFILE.role;
   $("[data-blurb]").textContent = PROFILE.blurb;
   document.querySelectorAll("[data-github]").forEach((a) => (a.href = PROFILE.github));
+  const avatar = $("[data-avatar]");
+  if (avatar) avatar.src = PROFILE.avatar;
   const ghLabel = $("[data-github-label]");
   if (ghLabel) ghLabel.textContent = PROFILE.githubLabel;
   $("[data-footer]").textContent = `© ${new Date().getFullYear()} ${PROFILE.name} · ${PROFILE.location}`;

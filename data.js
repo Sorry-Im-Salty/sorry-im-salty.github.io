@@ -10,6 +10,7 @@ const PROFILE = {
     "foundations in C/C++ from formal game-programming study. Below is my work, grouped by the repos I've shipped to.",
   github: "https://github.com/Sorry-Im-Salty",
   githubLabel: "github.com/Sorry-Im-Salty",
+  avatar: "https://github.com/Sorry-Im-Salty.png?size=240",
   location: "Australia",
 };
 

@@ -76,6 +76,13 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
 /* --- hero --- */
 .hero { padding: 80px 0 40px; }
+.hero__avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  object-fit: cover; display: block;
+  margin: 0 0 22px;
+  border: 2px solid var(--line);
+  box-shadow: 0 0 0 4px rgba(110,231,255,.08), 0 10px 30px rgba(0,0,0,.4);
+}
 .hero__eyebrow { font-family: "JetBrains Mono", monospace; color: var(--accent-3); margin: 0 0 14px; letter-spacing: 1px; }
 .hero__eyebrow::before { content: "❯ "; color: var(--faint); }
 .hero__title {
@@ -199,17 +206,6 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .timeline__period { font-family: "JetBrains Mono", monospace; color: var(--accent); font-size: .85rem; }
 .timeline__title { font-weight: 700; margin: 2px 0 4px; }
 .timeline__text { color: var(--muted); font-size: .92rem; margin: 0; max-width: 640px; }
-
-/* --- contact --- */
-.section--contact { padding-bottom: 60px; }
-.contact { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 640px; }
-.contact__card { background: linear-gradient(180deg, var(--panel), var(--bg-soft)); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; transition: transform .15s, border-color .2s; }
-.contact__card:hover { transform: translateY(-3px); border-color: var(--accent); }
-.contact__card--gh { display: flex; align-items: center; gap: 16px; }
-.contact__card--gh .gh-icon--lg { color: var(--text); flex-shrink: 0; transition: color .2s; }
-.contact__card--gh:hover .gh-icon--lg { color: var(--accent); }
-.contact__label { display: block; font-family: "JetBrains Mono", monospace; font-size: .72rem; color: var(--faint); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-.contact__value { font-weight: 600; word-break: break-all; }
 
 /* --- footer --- */
 .footer { max-width: var(--max); margin: 0 auto; padding: 30px 24px 50px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: var(--faint); font-size: .82rem; border-top: 1px solid var(--line); }
