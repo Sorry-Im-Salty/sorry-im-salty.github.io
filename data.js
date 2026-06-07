@@ -3,9 +3,9 @@
 const PROFILE = {
   name: "Salty",
   eyebrow: "FiveM / Lua systems developer",
-  role: "Gameplay & Systems Developer — FiveM / Lua",
+  role: "Gameplay & Systems Developer, FiveM / Lua",
   blurb:
-    "I build multiplayer game systems — competitive game modes, combat and progression systems, and " +
+    "I build multiplayer game systems: competitive game modes, combat and progression systems, and " +
     "the in-game UIs that drive them. Mostly Lua and Vue on a large FiveM roleplay server, with " +
     "foundations in C/C++ from formal game-programming study. Below is my work, grouped by the repos I've shipped to.",
   github: "https://github.com/Sorry-Im-Salty",
@@ -53,9 +53,9 @@ const FDG_PROJECTS = [
     title: "Nexus Game-Mode Framework",
     scope: "main_nexus · formerly main_area51",
     tag: "Game-Mode Framework",
-    year: "2025–26",
+    year: "2025-26",
     summary:
-      "My most extensive project (360+ commits) — a configurable multiplayer game-mode framework, " +
+      "My most extensive project (360+ commits): a configurable multiplayer game-mode framework, " +
       "originally shipped as 'Area 51' and later renamed Nexus. A shared, refactored core powers " +
       "multiple modes (Infected, Paintball, Search & Destroy, Horror) with map management, spawn " +
       "logic, scoreboards and per-mode tuning.",
@@ -104,7 +104,7 @@ const FDG_PROJECTS = [
     tag: "Asymmetric Game Mode",
     year: "2026",
     summary:
-      "An asymmetric monster-vs-survivors mode built on the Nexus framework — monster glow " +
+      "An asymmetric monster-vs-survivors mode built on the Nexus framework, with monster glow " +
       "effects, custom spawn handling, and EMS-ping blocking to keep the round self-contained.",
     highlights: [
       "Asymmetric round design (monster vs survivors)",
@@ -191,7 +191,7 @@ const FDG_PROJECTS = [
     tag: "World Interaction",
     year: "2024",
     summary:
-      "A networked spray-paint system letting players tag the world with gang logos — built as a " +
+      "A networked spray-paint system letting players tag the world with gang logos, built as a " +
       "clean V2 rewrite of the original script (90+ commits).",
     highlights: [
       "Networked, persistent world tagging",
@@ -208,7 +208,7 @@ const FDG_PROJECTS = [
     title: "Weapons & Holsters",
     scope: "core_weapon",
     tag: "Combat System",
-    year: "2025–26",
+    year: "2025-26",
     summary:
       "Weapon and equipment systems: a clothing-driven holster implementation, parachute " +
       "customisation, automatic-weapon registration and PD weapon fire-mode handling.",
@@ -322,7 +322,7 @@ const FDG_PROJECTS = [
     title: "Police Systems",
     scope: "main_pd",
     tag: "Roleplay System",
-    year: "2025–26",
+    year: "2025-26",
     summary:
       "Law-enforcement gameplay: a networked tackle mechanic (interior-aware, org-gated), manually " +
       "breakable vehicle windows, and the RAPTOR camera/evidence system.",
@@ -343,7 +343,7 @@ const FDG_PROJECTS = [
     title: "EMS & Medical",
     scope: "main_ems",
     tag: "Emergency Services",
-    year: "2024–26",
+    year: "2024-26",
     summary:
       "Medical and death systems: a bodybag workflow with auto-notes and item transfer, stretcher " +
       "and pull-from-vehicle handling, and auto-cleanup of consumed medkits.",
@@ -364,7 +364,7 @@ const FDG_PROJECTS = [
     title: "Forensic Evidence",
     scope: "main_evidence",
     tag: "Investigation System",
-    year: "2024–25",
+    year: "2024-25",
     summary:
       "A forensics toolkit for investigations: DNA collection, bullet-casing comparison, blood and " +
       "ballistics matching, and a RAPTOR vehicle evidence depot.",
@@ -386,7 +386,7 @@ const FDG_PROJECTS = [
     title: "Consumables & Effects",
     scope: "core_effects",
     tag: "Gameplay System",
-    year: "2024–25",
+    year: "2024-25",
     summary:
       "Consumable items and their gameplay effects: craftable salami, functional BAC/breath tests, " +
       "drinkable water to reduce drunkenness, and tuned unarmed damage modifiers.",
@@ -408,7 +408,7 @@ const FDG_PROJECTS = [
     title: "Clothing & Skin System",
     scope: "base_skin",
     tag: "Core System",
-    year: "2025–26",
+    year: "2025-26",
     summary:
       "Character appearance and equipment on the core skin base: backpack support, org/global item " +
       "restrictions with correct priority, ammo retention across ped changes, and ResetPed override " +
@@ -456,14 +456,14 @@ const REPOS = [
   {
     name: "fdg-rp / scripting",
     role: "Senior Developer",
-    period: "2024 – 2026",
+    period: "2024 - 2026",
     meta: "715 commits · 68k+ lines",
     languages: ["Lua", "Vue 3", "JavaScript", "SQL"],
     url: "https://github.com/fdg-rp/scripting",
     summary:
       "The resource monorepo for a large FiveM roleplay server. I own gameplay and systems work " +
       "across game modes, combat, vehicles, inventory and the emergency-services suite, plus the " +
-      "Vue NUIs that drive them. This is the bulk of my work — the projects below are highlights.",
+      "Vue NUIs that drive them. This is the bulk of my work; the projects below are highlights.",
     projects: FDG_PROJECTS,
   },
   {
@@ -483,7 +483,7 @@ const REPOS = [
         year: "2024",
         summary:
           "Admin/fun commands with a custom HUD, including a 'Hand of God' control and a fling " +
-          "command — worked around engine quirks to sync with punch animations and stop crashes.",
+          "command, working around engine quirks to sync with punch animations and stop crashes.",
         highlights: [
           "Custom HUD tied to command state",
           "Animation-synced HandOfGod control",
@@ -530,13 +530,13 @@ const REPOS = [
   },
   {
     name: "Sorry-Im-Salty / AIE-2019",
-    role: "Student — Academy of Interactive Entertainment",
+    role: "Student, Academy of Interactive Entertainment",
     period: "2019",
     meta: "Coursework",
     languages: ["C", "C++"],
     url: "https://github.com/Sorry-Im-Salty/AIE-2019",
     summary:
-      "Coursework from my game-programming studies — the fundamentals behind everything since.",
+      "Coursework from my game-programming studies: the fundamentals behind everything since.",
     projects: [
       {
         title: "Data Structures & Algorithms",
@@ -604,6 +604,6 @@ const TIMELINE = [
   {
     period: "2019",
     title: "Foundations",
-    text: "Studied game programming at the Academy of Interactive Entertainment — C/C++ fundamentals, data structures and algorithms.",
+    text: "Studied game programming at the Academy of Interactive Entertainment: C/C++ fundamentals, data structures and algorithms.",
   },
 ];
