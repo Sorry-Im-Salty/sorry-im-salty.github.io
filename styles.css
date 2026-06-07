@@ -102,6 +102,36 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .stats b { display: block; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--accent); letter-spacing: -.5px; }
 .stats span { color: var(--muted); font-size: .85rem; }
 
+/* --- repo tabs --- */
+.repo-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.repo-tab {
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform .15s, border-color .2s, box-shadow .2s, background .2s;
+}
+.repo-tab:hover { transform: translateY(-2px); border-color: rgba(110,231,255,.4); }
+.repo-tab__name { font-size: .98rem; font-weight: 600; color: var(--text); }
+.repo-tab__sub { font-size: .78rem; color: var(--muted); }
+.repo-tab.active {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(110,231,255,.10), var(--bg-soft));
+  box-shadow: 0 0 0 1px var(--accent) inset, 0 10px 30px rgba(110,231,255,.12);
+}
+.repo-tab.active .repo-tab__name { color: var(--accent); }
+
 /* --- repo group --- */
 .repo { margin-bottom: 56px; }
 .repo__head {

@@ -60,9 +60,10 @@
     return card;
   }
 
-  const reposEl = $("[data-repos]");
-  REPOS.forEach((repo) => {
-    const section = el("section", "repo reveal");
+  const tabsEl = $("[data-repo-tabs]");
+  const panelEl = $("[data-repo-panel]");
+
+  function renderRepo(repo) {
     const header = el("div", "repo__head");
     header.innerHTML = `
       <div class="repo__title-row">
@@ -72,13 +73,35 @@
       <div class="repo__role">${esc(repo.role)} · <span class="repo__meta">${esc(repo.meta)}</span></div>
       <p class="repo__summary">${esc(repo.summary)}</p>
       <div class="repo__langs">${repo.languages.map((l) => `<span class="chip chip--lang">${esc(l)}</span>`).join("")}</div>`;
-    section.appendChild(header);
 
     const grid = el("div", "grid");
     repo.projects.forEach((p) => grid.appendChild(projectCard(p)));
-    section.appendChild(grid);
-    reposEl.appendChild(section);
+
+    panelEl.innerHTML = "";
+    panelEl.appendChild(header);
+    panelEl.appendChild(grid);
+
+    // fade the freshly-swapped content in
+    panelEl.querySelectorAll(".reveal, .card").forEach((n) => n.classList.add("reveal"));
+    requestAnimationFrame(() => panelEl.querySelectorAll(".reveal").forEach((n) => n.classList.add("in")));
+  }
+
+  REPOS.forEach((repo, i) => {
+    const btn = el("button", "repo-tab");
+    const count = repo.projects.length;
+    btn.innerHTML = `
+      <span class="repo-tab__name mono">${esc(repo.name)}</span>
+      <span class="repo-tab__sub">${esc(repo.role)} · ${count} ${count === 1 ? "project" : "projects"}</span>`;
+    btn.addEventListener("click", () => {
+      [...tabsEl.children].forEach((c) => c.classList.remove("active"));
+      btn.classList.add("active");
+      renderRepo(repo);
+      $("#work").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    if (i === 0) btn.classList.add("active");
+    tabsEl.appendChild(btn);
   });
+  renderRepo(REPOS[0]);
 
   // --- Skills ---
   const skillsEl = $("[data-skills]");
