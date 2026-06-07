@@ -518,52 +518,117 @@ const REPOS = [
     role: "Student, Academy of Interactive Entertainment",
     period: "2019",
     meta: "Coursework",
-    languages: ["C", "C++"],
+    languages: ["C++", "C#"],
     url: "https://github.com/Sorry-Im-Salty/AIE-2019",
     summary:
-      "Coursework from my game-programming studies: the fundamentals behind everything since.",
+      "A year of game-programming coursework across several subjects: the C++ and C# fundamentals " +
+      "behind everything since.",
     projects: [
       {
+        title: "RPG Level Editor",
+        scope: "Introduction to C#",
+        tag: "Tools / C#",
+        year: "2019",
+        summary:
+          "A Windows Forms RPG editor built in C#: import sprites into a picture canvas, place tiles " +
+          "with drag-and-drop, and save/load projects with input validation, plus a toolbar and help dialog.",
+        highlights: [
+          "Sprite import into a picture canvas",
+          "Drag-and-drop placement",
+          "Save / load with input validation",
+          "Toolbar, New action and help dialog",
+        ],
+        stack: ["C#", "WinForms"],
+        commits: [
+          "Created the Import Sprite button and implemented the pictureBox code.",
+          "Added drag and drop functionality and changed max values for data input.",
+          "Implemented Help dialogue box code.",
+          "Updated Toolbar and added code for the New button.",
+        ],
+      },
+      {
+        title: "Maths for Games",
+        scope: "Maths for Games",
+        tag: "Maths / C++",
+        year: "2019",
+        summary:
+          "Game-math fundamentals in C++: a Vector2 type with velocity, transform/translate functions, " +
+          "and binary/decimal conversion utilities, backed by a small reusable math library.",
+        highlights: [
+          "Vector2 with velocity",
+          "Translate / transform functions",
+          "Binary and decimal conversions",
+          "Reusable math library",
+        ],
+        stack: ["C++"],
+        commits: [
+          "Added Vector2 and added velocity.",
+          "Updated translate function",
+          "Updated Binary / Decimal conversions.",
+          "Updated math.lib",
+        ],
+      },
+      {
+        title: "AI for Games",
+        scope: "A.I for Games",
+        tag: "Game AI",
+        year: "2019",
+        summary:
+          "An AI-for-games project developed test-first: tracer/targeting functions and clean " +
+          "game-state management with a menu flow.",
+        highlights: [
+          "Test-driven AI design (TDD)",
+          "Tracer / targeting functions",
+          "Game-state management + menu flow",
+        ],
+        stack: ["C++"],
+        commits: [
+          "Added TDD - AI",
+          "Added relevant Tracer functions and cleaned up GameState",
+          "Added Menu Button to GameState.",
+        ],
+      },
+      {
+        title: "Tank Game",
+        scope: "Introduction to C++",
+        tag: "Game / C++",
+        year: "2019",
+        summary:
+          "An object-oriented refactor exercise in C++: extracting tank state and behaviour into a " +
+          "dedicated Tank class with velocity-based movement.",
+        highlights: [
+          "Tank class (OOP refactor)",
+          "Velocity-based movement",
+          "Moved logic out of the app into the class",
+        ],
+        stack: ["C++"],
+        commits: [
+          "Created Tank Class.",
+          "Removed tankForward function and implemented velocity.",
+          "Begun moving all relevant tank class variables and functions from app2D to tank class.",
+        ],
+      },
+      {
         title: "Data Structures & Algorithms",
-        scope: "fundamentals",
+        scope: "Code Design & Data Structures",
         tag: "Education",
         year: "2019",
         summary:
-          "Implementations of core CS fundamentals in C/C++: search and sort algorithms, entity " +
-          "arrays and iteration, and write-ups on decision-making techniques.",
+          "Core CS fundamentals in C++: search and sort algorithms, a dynamic entity array, a fix to " +
+          "the remove routine, and write-ups on decision-making techniques.",
         highlights: [
           "Linear & bubble sort implementations",
-          "Entity arrays and iteration",
+          "Dynamic entity array and iteration",
+          "Remove-function bug fix",
           "Decision-making technique write-up",
         ],
-        stack: ["C", "C++"],
+        stack: ["C++"],
         commits: [
           "Added LinearSearch and BubbleSort.",
+          "Decreased nNextIndex instead of nLength within the remove function.",
           "Added example entity.",
           "Added Decision Making Technique Section.",
         ],
-      },
-    ],
-  },
-  {
-    name: "fdg-rp / web-landing",
-    role: "Contributor",
-    period: "2024",
-    meta: "Web",
-    languages: ["Vue", "TypeScript"],
-    url: "https://github.com/fdg-rp/web-landing",
-    summary:
-      "The server's public Vue landing/appeals site. I contributed content and copy fixes.",
-    projects: [
-      {
-        title: "Landing & Appeals Content",
-        scope: "web",
-        tag: "Web",
-        year: "2024",
-        summary: "Content and copy updates to the public-facing Vue landing site.",
-        highlights: ["Appeals page content", "Copy / grammar fixes"],
-        stack: ["Vue", "TypeScript"],
-        commits: ["Update appeals.md", "Fixed up grammatical errors."],
       },
     ],
   },
