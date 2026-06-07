@@ -50,12 +50,37 @@ const SKILLS = [
 // Work on fdg-rp/scripting. `commits` are real, verbatim commit subjects.
 const FDG_PROJECTS = [
   {
+    title: "Nexus Game-Mode Framework",
+    scope: "main_nexus · formerly main_area51",
+    tag: "Game-Mode Framework",
+    year: "2025–26",
+    summary:
+      "My most extensive project (360+ commits) — a configurable multiplayer game-mode framework, " +
+      "originally shipped as 'Area 51' and later renamed Nexus. A shared, refactored core powers " +
+      "multiple modes (Infected, Paintball, Search & Destroy, Horror) with map management, spawn " +
+      "logic, scoreboards and per-mode tuning.",
+    highlights: [
+      "Multiple game modes from one shared, refactored core",
+      "Hand-built maps (Stab City, Legion Square, Cayo Mansion) with radius/spawn tuning",
+      "Live scoreboard + border/zone systems",
+      "Per-mode settings (superjump, infected speed)",
+    ],
+    stack: ["Lua", "Vue 3", "NUI", "SQL"],
+    commits: [
+      "feat(area51): Initial testing",
+      "tweak(area51): Refactor",
+      "tweak(area51): New infected maps",
+      "tweak(nexus): Optimisations/Cleanup",
+      "tweak(nexus): Further extraction",
+    ],
+  },
+  {
     title: "Search & Destroy",
     scope: "nexus",
     tag: "Competitive Game Mode",
     year: "2026",
     summary:
-      "A CS-style bomb plant/defuse game mode built from scratch: round logic, attacker/defender " +
+      "A CS-style bomb plant/defuse mode built on the Nexus framework: round logic, attacker/defender " +
       "teams, bombsite mechanics, spectator system, killfeed, and a full lobby UI. Shipped with " +
       "multiple custom maps (Cayo Mansion, Beach, Hangar, Raid).",
     highlights: [
@@ -79,7 +104,7 @@ const FDG_PROJECTS = [
     tag: "Asymmetric Game Mode",
     year: "2026",
     summary:
-      "An asymmetric monster-vs-survivors mode layered onto the Nexus framework — monster glow " +
+      "An asymmetric monster-vs-survivors mode built on the Nexus framework — monster glow " +
       "effects, custom spawn handling, and EMS-ping blocking to keep the round self-contained.",
     highlights: [
       "Asymmetric round design (monster vs survivors)",
@@ -91,30 +116,6 @@ const FDG_PROJECTS = [
       "feat(nexus): Horror gamemode",
       "tweak(nexus): Monster glow",
       "tweak(nexus): Block ems ping + spawnpoints",
-    ],
-  },
-  {
-    title: "Area 51 Battle Arena",
-    scope: "main_area51",
-    tag: "Game Mode Suite",
-    year: "2025–26",
-    summary:
-      "My most extensive project (360+ commits). A configurable PvP arena supporting multiple game " +
-      "modes — Infected, Paintball and more — with map management, spawn logic, scoreboards and " +
-      "per-mode tuning like superjump and infected speed.",
-    highlights: [
-      "Multiple game modes from a shared, refactored core",
-      "Hand-built maps (Stab City, Legion Square) with radius/spawn tuning",
-      "Live scoreboard + border/zone systems",
-      "Per-mode settings (superjump, infected speed)",
-    ],
-    stack: ["Lua", "Vue 3", "NUI", "SQL"],
-    commits: [
-      "feat(area51): Initial testing",
-      "tweak(area51): New infected maps",
-      "tweak(area51): Infected superjump setting",
-      "tweak(area51): Refactor",
-      "fix(area51): legion square map spawns",
     ],
   },
   {
@@ -454,7 +455,7 @@ const FDG_PROJECTS = [
 const REPOS = [
   {
     name: "fdg-rp / scripting",
-    role: "Lead Gameplay & Systems Developer",
+    role: "Senior Developer",
     period: "2024 – 2026",
     meta: "715 commits · 68k+ lines",
     languages: ["Lua", "Vue 3", "JavaScript", "SQL"],
@@ -593,7 +594,7 @@ const TIMELINE = [
   {
     period: "2025",
     title: "Systems & arenas",
-    text: "Most active year (350+ commits): the Area 51 battle arena, full garage rework, weapons/holsters and inventory work.",
+    text: "Most active year (350+ commits): the Nexus game-mode framework (formerly Area 51), full garage rework, weapons/holsters and inventory work.",
   },
   {
     period: "2024",
