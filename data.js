@@ -6,15 +6,15 @@ const PROFILE = {
   role: "Gameplay & Systems Developer — FiveM / Lua",
   blurb:
     "I build multiplayer game systems — competitive game modes, combat and progression systems, and " +
-    "the in-game UIs that drive them. Mostly Lua and Vue on a large FiveM roleplay server, with a " +
-    "background in C#/Unity game programming. Below is my work, grouped by the repos I've shipped to.",
+    "the in-game UIs that drive them. Mostly Lua and Vue on a large FiveM roleplay server, with " +
+    "foundations in C/C++ from formal game-programming study. Below is my work, grouped by the repos I've shipped to.",
   github: "https://github.com/fdg-rp/scripting",
   location: "Australia",
 };
 
 const STATS = [
-  { value: "5", label: "Repositories" },
-  { value: "770+", label: "Commits authored" },
+  { value: "4", label: "Repositories" },
+  { value: "740+", label: "Commits authored" },
   { value: "6+", label: "Languages" },
   { value: "2019", label: "Coding since" },
 ];
@@ -22,11 +22,11 @@ const STATS = [
 const SKILLS = [
   {
     group: "Languages",
-    items: ["Lua", "JavaScript", "C#", "C / C++", "SQL", "HTML / CSS"],
+    items: ["Lua", "JavaScript", "C / C++", "SQL", "HTML / CSS"],
   },
   {
     group: "Frameworks & UI",
-    items: ["FiveM / CitizenFX", "Vue 3", "NUI (eventbridge)", "Unity", "MySQL / oxmysql"],
+    items: ["FiveM / CitizenFX", "Vue 3", "NUI (eventbridge)", "MySQL / oxmysql"],
   },
   {
     group: "Domains",
@@ -38,7 +38,6 @@ const SKILLS = [
       "Police / EMS / forensics tooling",
       "Anti-exploit & security hardening",
       "Performance & refactoring",
-      "Game development (Unity)",
       "Data structures & algorithms",
       "Client/server architecture",
       "Live-ops & hotfixing",
@@ -527,41 +526,6 @@ const REPOS = [
     ],
   },
   {
-    name: "Sorry-Im-Salty / Goose-Hunt",
-    role: "Game Programmer (team project)",
-    period: "2019",
-    meta: "24 commits",
-    languages: ["C#", "Unity", "HLSL"],
-    url: "https://github.com/Sorry-Im-Salty/Goose-Hunt",
-    summary:
-      "A Unity game built in C# with a small team ('Electronic Ants'). My contributions covered " +
-      "gameplay scripting, scoring, lighting and platform testing.",
-    projects: [
-      {
-        title: "Goose Hunt",
-        scope: "Unity game",
-        tag: "Game Development",
-        year: "2019",
-        summary:
-          "Gameplay and systems work on a Unity title: a scoring system, play function, lighting, " +
-          "an Android platform check, and a documented play-test evaluation.",
-        highlights: [
-          "Score system & play loop",
-          "Lighting setup",
-          "Android platform check",
-          "Play-test evaluation",
-        ],
-        stack: ["C#", "Unity", "HLSL"],
-        commits: [
-          "Added Score Script.",
-          "Updated Play Function.",
-          "Added an Android check.",
-          "Added Play Test Evaluation.",
-        ],
-      },
-    ],
-  },
-  {
     name: "Sorry-Im-Salty / AIE-2019",
     role: "Student — Academy of Interactive Entertainment",
     period: "2019",
@@ -637,6 +601,6 @@ const TIMELINE = [
   {
     period: "2019",
     title: "Foundations",
-    text: "Studied game programming at the Academy of Interactive Entertainment — C/C++ fundamentals and data structures — and built the Unity game Goose Hunt with a small team.",
+    text: "Studied game programming at the Academy of Interactive Entertainment — C/C++ fundamentals, data structures and algorithms.",
   },
 ];
