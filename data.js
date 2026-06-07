@@ -24,7 +24,7 @@ const STATS = [
 const SKILLS = [
   {
     group: "Languages",
-    items: ["Lua", "JavaScript", "C / C++", "SQL", "HTML / CSS"],
+    items: ["Lua", "JavaScript", "C#", "C / C++", "SQL", "HTML / CSS"],
   },
   {
     group: "Frameworks & UI",
