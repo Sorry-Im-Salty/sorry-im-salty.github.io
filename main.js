@@ -41,15 +41,17 @@
   function projectCard(p) {
     const card = el("article", "card reveal");
     card.innerHTML = `
-      <div class="card__top">
-        <span class="card__tag">${esc(p.tag)}</span>
-        <span class="card__year">${esc(p.year)}</span>
+      <div class="card__body">
+        <div class="card__top">
+          <span class="card__tag">${esc(p.tag)}</span>
+          <span class="card__year">${esc(p.year)}</span>
+        </div>
+        <h3 class="card__title">${esc(p.title)}</h3>
+        <p class="card__scope mono">${esc(p.scope)}</p>
+        <p class="card__summary">${esc(p.summary)}</p>
+        <ul class="card__hl">${p.highlights.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>
+        <div class="card__stack">${p.stack.map((s) => `<span class="chip">${esc(s)}</span>`).join("")}</div>
       </div>
-      <h3 class="card__title">${esc(p.title)}</h3>
-      <p class="card__scope mono">${esc(p.scope)}</p>
-      <p class="card__summary">${esc(p.summary)}</p>
-      <ul class="card__hl">${p.highlights.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>
-      <div class="card__stack">${p.stack.map((s) => `<span class="chip">${esc(s)}</span>`).join("")}</div>
       <div class="commits">
         <div class="commits__label">From the commit log</div>
         <div class="commits__list">
