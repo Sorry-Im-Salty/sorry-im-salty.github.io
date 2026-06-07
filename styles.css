@@ -87,7 +87,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .hero__blurb { max-width: 620px; color: var(--muted); margin: 16px 0 0; }
 .hero__cta { display: flex; gap: 14px; margin: 30px 0 0; flex-wrap: wrap; }
 
-.btn { padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: .95rem; transition: transform .15s, box-shadow .2s, background .2s; }
+.btn { display: inline-flex; align-items: center; gap: 9px; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: .95rem; transition: transform .15s, box-shadow .2s, background .2s; }
+.gh-icon { display: block; }
 .btn--primary { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #07080c; }
 .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(110,231,255,.25); }
 .btn--ghost { border: 1px solid var(--line); color: var(--text); }
@@ -204,6 +205,9 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .contact { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 640px; }
 .contact__card { background: linear-gradient(180deg, var(--panel), var(--bg-soft)); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; transition: transform .15s, border-color .2s; }
 .contact__card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.contact__card--gh { display: flex; align-items: center; gap: 16px; }
+.contact__card--gh .gh-icon--lg { color: var(--text); flex-shrink: 0; transition: color .2s; }
+.contact__card--gh:hover .gh-icon--lg { color: var(--accent); }
 .contact__label { display: block; font-family: "JetBrains Mono", monospace; font-size: .72rem; color: var(--faint); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 .contact__value { font-weight: 600; word-break: break-all; }
 

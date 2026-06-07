@@ -8,7 +8,8 @@ const PROFILE = {
     "I build multiplayer game systems — competitive game modes, combat and progression systems, and " +
     "the in-game UIs that drive them. Mostly Lua and Vue on a large FiveM roleplay server, with " +
     "foundations in C/C++ from formal game-programming study. Below is my work, grouped by the repos I've shipped to.",
-  github: "https://github.com/fdg-rp/scripting",
+  github: "https://github.com/Sorry-Im-Salty",
+  githubLabel: "github.com/Sorry-Im-Salty",
   location: "Australia",
 };
 
