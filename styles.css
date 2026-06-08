@@ -204,21 +204,31 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
 /* --- modal (screenshots + interactive demos) --- */
 .modal {
-  position: fixed; inset: 0; z-index: 100; display: none;
+  position: fixed; inset: 0; z-index: 100; display: flex;
   align-items: center; justify-content: center; padding: 40px;
   background: rgba(5, 7, 11, .9); backdrop-filter: blur(5px); cursor: zoom-out;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .28s ease, visibility .28s ease;
 }
-.modal.open { display: flex; }
-.modal__inner { position: relative; max-width: 92vw; cursor: default; }
+.modal.open { opacity: 1; visibility: visible; pointer-events: auto; }
+.modal__inner {
+  position: relative; max-width: 92vw; cursor: default;
+  transform: scale(.96) translateY(10px);
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1);
+}
+.modal.open .modal__inner { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .modal, .modal__inner { transition: none; }
+}
 .modal__img { max-width: 92vw; max-height: 86vh; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 24px 70px rgba(0,0,0,.6); display: block; }
 .modal__close { position: absolute; top: -42px; right: -6px; background: none; border: none; color: #fff; font-size: 2.4rem; line-height: 1; cursor: pointer; opacity: .85; }
 .modal__close:hover { opacity: 1; }
 .modal--demo .modal__frame {
   width: min(820px, 92vw); height: min(720px, 80vh);
-  border: 1px solid var(--line); border-radius: 12px; background: #0a0d13;
-  box-shadow: 0 24px 70px rgba(0,0,0,.6); display: block;
+  border: 0; background: transparent; display: block;
 }
-.modal__note { color: var(--muted); font-size: .82rem; text-align: center; margin: 12px 0 0; }
+.modal--demo .modal__close { display: none; }
+.modal__note { color: var(--muted); font-size: .82rem; text-align: center; margin: 14px 0 0; }
 .card__hl { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 6px; }
 .card__hl li { font-size: .85rem; color: var(--text); padding-left: 18px; position: relative; }
 .card__hl li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }

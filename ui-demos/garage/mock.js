@@ -14,14 +14,23 @@
     return new Response(JSON.stringify(obj), { status: 200, headers: { "Content-Type": "application/json" } });
   }
 
+  // game globals that don't exist in the browser
+  window.GetParentResourceName = function () { return "core_vehicles"; };
+
+  // tell the parent portfolio to close the demo modal
+  function notifyClose() {
+    try { window.parent.postMessage({ fdgDemoClose: true }, "*"); } catch (e) {}
+  }
+
   var orig = window.fetch;
   window.fetch = function (url, opts) {
     try {
       var u = String(url);
-      if (u.indexOf("http://core_vehicles/") === 0) {
+      if (u.indexOf("/closeGarage") !== -1) { notifyClose(); return Promise.resolve(reply([])); }
+      if (u.indexOf("core_vehicles/") !== -1) {
         var body = {};
         try { body = JSON.parse((opts && opts.body) || "{}"); } catch (e) {}
-        var path = u.replace("http://core_vehicles/", "");
+        var path = u.replace(/^https?:\/\/core_vehicles\//, "");
         if (path === "triggerServerCallback") {
           var ev = body.eventName || "";
           if (ev.indexOf("getOwned") !== -1) return Promise.resolve(reply([cars]));
@@ -36,6 +45,16 @@
     } catch (e) {}
     return orig.apply(this, arguments);
   };
+
+  // backup: if the app signals it is closing, tell the parent
+  window.addEventListener("message", function (e) {
+    if (e.data && e.data.openGarage === false) notifyClose();
+  });
+
+  // click on the dimmed area (anywhere outside the garage panel) closes the demo
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".park-card")) notifyClose();
+  });
 
   // auto-open the garage (the app listens for this once mounted)
   var garage = { location: "legion", locationLabel: "Legion Square", raidGarage: false, orgGarage: false, isPropertyGarage: false };

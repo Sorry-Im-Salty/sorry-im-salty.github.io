@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Garage UI Demo</title>
     <style>
-      html, body { margin: 0; min-height: 100%; background: radial-gradient(900px 600px at 70% 20%, #141a26, #0a0d13); }
+      html, body { margin: 0; min-height: 100%; background: transparent !important; }
       /* The NUI is built for a full game-resolution viewport. In this small demo
          frame, fix the vertical centering and the fixed vw heights so nothing
          (e.g. the Back button) gets clipped. */
       #app, .app-container {
-        height: auto !important; min-height: 100% !important;
-        display: block !important; padding: 24px 0 !important;
+        height: auto !important; min-height: 100vh !important;
+        display: flex !important;
+        align-items: safe center !important;
+        justify-content: safe center !important;
+        padding: 24px !important;
       }
-      .park-card { margin: 0 auto !important; }
+      .park-card { margin: 0 !important; }
       /* containers that hard-code height/max-height: 28vw -> let them size to content */
       .park-card .v-container[style*="28vw"] { height: auto !important; max-height: 70vh !important; }
     </style>

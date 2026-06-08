@@ -132,8 +132,15 @@
   document.body.appendChild(modal);
   const modalBody = modal.querySelector(".modal__body");
   function closeModal() {
-    modal.classList.remove("open", "modal--demo");
-    modalBody.innerHTML = "";
+    if (!modal.classList.contains("open")) return;
+    modal.classList.remove("open");
+    // clear content only after the exit transition (and only if still closed)
+    setTimeout(() => {
+      if (!modal.classList.contains("open")) {
+        modal.classList.remove("modal--demo");
+        modalBody.innerHTML = "";
+      }
+    }, 300);
   }
   document.addEventListener("click", (e) => {
     const demo = e.target.closest("[data-demo]");
@@ -141,7 +148,7 @@
       modal.classList.add("open", "modal--demo");
       modalBody.innerHTML =
         `<iframe class="modal__frame" src="${demo.getAttribute("data-demo")}" title="Interactive UI demo"></iframe>
-         <p class="modal__note">Live UI running on sample data — click around, search, open a vehicle.</p>`;
+         <p class="modal__note">Live UI running on sample data. Click around, search, open a vehicle.</p>`;
       return;
     }
     const shot = e.target.closest("[data-shot]");
@@ -153,6 +160,10 @@
     if (e.target === modal || e.target.closest(".modal__close")) closeModal();
   });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+  // the embedded demo posts this when its own close button is used
+  window.addEventListener("message", (e) => {
+    if (e.data && e.data.fdgDemoClose) { closeModal(); window.focus(); }
+  });
 
   // --- Skills ---
   const skillsEl = $("[data-skills]");
