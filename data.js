@@ -130,6 +130,8 @@ const FDG_PROJECTS = [
     scope: "core_vehicles",
     tag: "Vehicle System",
     year: "2025",
+    image: "assets/ui/garage.png",
+    demo: "ui-demos/garage/",
     summary:
       "A ground-up rework of the vehicle garage system: organisation garages, a raid-garage flow " +
       "with owner sorting/folding, persistent vehicle health, GPS waypoints, tow logic and a fade-in UI.",

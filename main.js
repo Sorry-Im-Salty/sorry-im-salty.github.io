@@ -40,6 +40,18 @@
   // --- Projects, grouped by repo ---
   function projectCard(p) {
     const card = el("article", "card reveal");
+    let shot = "";
+    if (p.demo) {
+      shot = `<button class="card__shot" data-demo="${esc(p.demo)}" title="Launch interactive demo">
+          <img src="${esc(p.image)}" alt="${esc(p.title)} UI" loading="lazy" />
+          <span class="card__shot-badge card__shot-badge--demo">▶ Live interactive demo</span>
+        </button>`;
+    } else if (p.image) {
+      shot = `<button class="card__shot" data-shot="${esc(p.image)}" title="Click to enlarge">
+          <img src="${esc(p.image)}" alt="${esc(p.title)} UI" loading="lazy" />
+          <span class="card__shot-badge">UI</span>
+        </button>`;
+    }
     card.innerHTML = `
       <div class="card__body">
         <div class="card__top">
@@ -48,6 +60,7 @@
         </div>
         <h3 class="card__title">${esc(p.title)}</h3>
         <p class="card__scope mono">${esc(p.scope)}</p>
+        ${shot}
         <p class="card__summary">${esc(p.summary)}</p>
         <ul class="card__hl">${p.highlights.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>
         <div class="card__stack">${p.stack.map((s) => `<span class="chip">${esc(s)}</span>`).join("")}</div>
@@ -108,6 +121,38 @@
     tabsEl.appendChild(btn);
   });
   renderRepo(REPOS[0]);
+
+  // --- Modal for UI screenshots and interactive demos ---
+  const modal = el("div", "modal");
+  modal.innerHTML = `
+    <div class="modal__inner">
+      <button class="modal__close" aria-label="Close">&times;</button>
+      <div class="modal__body"></div>
+    </div>`;
+  document.body.appendChild(modal);
+  const modalBody = modal.querySelector(".modal__body");
+  function closeModal() {
+    modal.classList.remove("open", "modal--demo");
+    modalBody.innerHTML = "";
+  }
+  document.addEventListener("click", (e) => {
+    const demo = e.target.closest("[data-demo]");
+    if (demo) {
+      modal.classList.add("open", "modal--demo");
+      modalBody.innerHTML =
+        `<iframe class="modal__frame" src="${demo.getAttribute("data-demo")}" title="Interactive UI demo"></iframe>
+         <p class="modal__note">Live UI running on sample data — click around, search, open a vehicle.</p>`;
+      return;
+    }
+    const shot = e.target.closest("[data-shot]");
+    if (shot) {
+      modal.classList.add("open");
+      modalBody.innerHTML = `<img class="modal__img" src="${shot.getAttribute("data-shot")}" alt="UI screenshot" />`;
+      return;
+    }
+    if (e.target === modal || e.target.closest(".modal__close")) closeModal();
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
 
   // --- Skills ---
   const skillsEl = $("[data-skills]");
