@@ -148,7 +148,7 @@
       modal.classList.add("open", "modal--demo");
       modalBody.innerHTML =
         `<iframe class="modal__frame" src="${demo.getAttribute("data-demo")}" title="Interactive UI demo"></iframe>
-         <p class="modal__note">Live UI running on sample data. Click around, search, open a vehicle.</p>`;
+         <p class="modal__note">Live UI running on sample data. Interact with it, then click outside or press Esc to close.</p>`;
       return;
     }
     const shot = e.target.closest("[data-shot]");

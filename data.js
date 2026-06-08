@@ -64,6 +64,8 @@ const FDG_PROJECTS = [
     scope: "nexus",
     tag: "Competitive Game Mode",
     year: "2026",
+    image: "assets/ui/sd.png",
+    demo: "ui-demos/sd/",
     summary:
       "A CS-style bomb plant/defuse mode built on the Nexus framework: round logic, attacker/defender " +
       "teams, bombsite mechanics, spectator system, killfeed, and a full lobby UI. Shipped with " +
@@ -108,6 +110,8 @@ const FDG_PROJECTS = [
     scope: "main_battles",
     tag: "Combat / Scoreboard",
     year: "2026",
+    image: "assets/ui/battles.png",
+    demo: "ui-demos/battles/",
     summary:
       "A team-based combat system with capture mechanics, a polished spectator scoreboard, and a " +
       "killfeed that correctly handles team-kills and headshots. Included a full UI uplift.",
